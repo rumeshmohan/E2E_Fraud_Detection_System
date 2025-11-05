@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/notebooks/mlruns/110747090706711641/b9c16c165e894ef3b38cd9ab2b91c047/artifacts
+end_time: 1762281817846
+entry_point_name: ''
+experiment_id: '110747090706711641'
+lifecycle_stage: active
+run_id: b9c16c165e894ef3b38cd9ab2b91c047
+run_name: XGBoost Run (Fixed Warnings)
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762281816344
+status: 3
+tags: []
+user_id: DineshRaj

@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/notebooks/mlruns/110747090706711641/models/m-69632be3ff4441c9b43e03db1cd6d065/artifacts
+creation_timestamp: 1762281176951
+experiment_id: '110747090706711641'
+last_updated_timestamp: 1762281186230
+model_id: m-69632be3ff4441c9b43e03db1cd6d065
+model_type: null
+name: model
+source_run_id: 97293f5938f74c09861c3c962ccc1031
+status: 2
+status_message: null

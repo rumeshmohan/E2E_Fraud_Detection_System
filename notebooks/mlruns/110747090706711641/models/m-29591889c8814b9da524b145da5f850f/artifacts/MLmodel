@@ -1,0 +1,46 @@
+artifact_path: file:///c:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/notebooks/mlruns/110747090706711641/models/m-29591889c8814b9da524b145da5f850f/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+is_signature_from_type_hint: false
+mlflow_version: 3.5.1
+model_id: m-29591889c8814b9da524b145da5f850f
+model_size_bytes: 332469
+model_uuid: m-29591889c8814b9da524b145da5f850f
+prompts: null
+run_id: a6946b6199684a71baf0fa675be4bf85
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "string", "name": "browser", "required": true}, {"type": "string",
+    "name": "source", "required": true}, {"type": "long", "name": "purchase_value",
+    "required": true}, {"type": "double", "name": "account_age_minutes", "required":
+    true}, {"type": "double", "name": "velocity_device_id_count_1h", "required": true},
+    {"type": "double", "name": "velocity_device_id_amount_1h", "required": true},
+    {"type": "double", "name": "velocity_device_id_count_24h", "required": true},
+    {"type": "double", "name": "velocity_device_id_amount_24h", "required": true},
+    {"type": "double", "name": "velocity_ip_address_count_1h", "required": true},
+    {"type": "double", "name": "velocity_ip_address_amount_1h", "required": true},
+    {"type": "double", "name": "velocity_ip_address_count_24h", "required": true},
+    {"type": "double", "name": "velocity_ip_address_amount_24h", "required": true},
+    {"type": "double", "name": "rarity_device_id_count_7d", "required": true}, {"type":
+    "double", "name": "rarity_ip_address_count_7d", "required": true}, {"type": "double",
+    "name": "zscore_user_id_30d", "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-11-04 18:47:13.811783'

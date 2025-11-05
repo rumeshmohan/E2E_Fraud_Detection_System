@@ -1,0 +1,15 @@
+creation_timestamp: 1762283446073
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1762283446073
+model_id: m-29591889c8814b9da524b145da5f850f
+name: FraudDetectionModel
+run_id: a6946b6199684a71baf0fa675be4bf85
+run_link: null
+source: models:/m-29591889c8814b9da524b145da5f850f
+status: READY
+status_message: null
+storage_location: file:///c:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/notebooks/mlruns/110747090706711641/models/m-29591889c8814b9da524b145da5f850f/artifacts
+user_id: null
+version: 1

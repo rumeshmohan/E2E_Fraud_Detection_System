@@ -24,3 +24,38 @@ The model will be evaluated based on:
 2.  **Expected Cost Savings:** Total cost saved by the model at its optimal threshold, compared to a baseline.
 3.  **Fraud Detection Rate (Recall):** Percentage of all fraud cases successfully caught.
 4.  **Alert Precision:** Percentage of fraud alerts that are *actually* fraud.
+
+---
+
+## 📊 Project Status
+
+### ✅ Phase 1: Foundation & Data Engineering (Complete)
+
+This phase covers all data acquisition, validation, and feature engineering, resulting in a model-ready "curated" dataset.
+
+* **Task 1: Business Framing** 
+    * The business problem is framed as a cost-minimization task.
+    * **Cost Matrix (Assumed):**
+        * **`C_fp` (False Positive Cost): $5** (cost of manual review) 
+        * **`C_fn` (False Negative Cost): $100** (avg. fraud loss) 
+    * **Primary Metric:** AUC-ROC
+    * **Primary Business KPI:** Minimized Total Cost / Expected Cost Savings 
+
+* **Task 2: Data Quality & EDA** 
+    * Analysis is documented in `notebooks/01-eda-and-validation.ipynb`.
+    * **Row Count:** 151,112 transactions confirmed.
+    * **Class Balance:** 9.36% fraud, 90.64% not-fraud (matches ~10% expectation).
+    * **Data Quality:**
+        * **Missing Data:** 0% missing values across all columns.
+        * **Temporal Integrity:** 100% of records pass (`purchase_time >= signup_time`).
+
+* **Task 3: Leakage-Safe Feature Engineering**
+    * **Core Logic:** Implemented in `src/feature_engineering.py`.
+    * **Leakage Prevention:** All rolling-window features are 100% leakage-safe, using `closed='left'` to ensure only historical data is used for each transaction.
+    * **Features Created:**
+        * **`account_age_minutes`**: Time between signup and purchase.
+        * **Velocity Metrics**: Transaction counts and amounts for `device_id` & `ip_address` (1h, 24h windows).
+        * **Rarity Signals**: Transaction counts for `device_id` & `ip_address` (7d window).
+        * **Amount Normalization**: Z-score of `purchase_value` for `user_id` (30d window).
+    * **Pipeline Script:** `src/run_data_processing.py` orchestrates the full pipeline.
+    * **Output Artifact:** A `data/curated_dataset.parquet` file is generated, ready for model training.

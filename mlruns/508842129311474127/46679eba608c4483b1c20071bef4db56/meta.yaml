@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/mlruns/508842129311474127/46679eba608c4483b1c20071bef4db56/artifacts
+end_time: 1762352436895
+entry_point_name: ''
+experiment_id: '508842129311474127'
+lifecycle_stage: active
+run_id: 46679eba608c4483b1c20071bef4db56
+run_name: masked-grouse-370
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762352428771
+status: 3
+tags: []
+user_id: DineshRaj

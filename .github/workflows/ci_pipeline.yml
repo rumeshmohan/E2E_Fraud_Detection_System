@@ -1,0 +1,30 @@
+name: CI - Fraud Detection Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11' 
+
+    - name: Run CI Pipeline (Install, Process Data, Train)
+      run: |
+        # We run the 'make install' target from our Makefile
+        # This will create the venv and install requirements
+        make install
+
+        # We run the 'make all' target
+        # This will run 'process-data' then 'train'
+        make all

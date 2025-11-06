@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/mlruns/508842129311474127/models/m-1b2d52faeafe4f59bcd24f02ab0c68b3/artifacts
+creation_timestamp: 1762351744055
+experiment_id: '508842129311474127'
+last_updated_timestamp: 1762351751115
+model_id: m-1b2d52faeafe4f59bcd24f02ab0c68b3
+model_type: null
+name: fraud_detection_model
+source_run_id: 6ce33ca99df94cd9932a181cd28832de
+status: 2
+status_message: null

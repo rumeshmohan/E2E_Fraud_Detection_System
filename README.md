@@ -59,3 +59,33 @@ This phase covers all data acquisition, validation, and feature engineering, res
         * **Amount Normalization**: Z-score of `purchase_value` for `user_id` (30d window).
     * **Pipeline Script:** `src/run_data_processing.py` orchestrates the full pipeline.
     * **Output Artifact:** A `data/curated_dataset.parquet` file is generated, ready for model training.
+
+---
+
+### ✅ Phase 2: Batch Model Pipeline (Complete)
+
+This phase focuses on training a predictive model on the curated data, optimizing it for business cost, and tracking all results.
+
+* **Task 4: Modeling**
+    * A training script `src/run_model_training.py` has been built to consume the artifact from Phase 1.
+    * It correctly uses a time-based split (85% train/val, 15% test) to create a hold-out test set.
+    * It uses `TimeSeriesSplit(n_splits=5)` for robust, leakage-safe cross-validation.
+    * It uses an `XGBClassifier` with `scale_pos_weight` to handle class imbalance.
+    * A cost-optimization function (`find_optimal_threshold`) is used to find the best probability threshold to minimize business costs.
+
+* **Task 5: Experiment Tracking**
+    * The training script is fully integrated with `mlflow`.
+    * All runs are logged to the "Fraud_Detection_System" experiment.
+    * **Metrics Logged:** `validation_auc_avg`, `optimal_threshold`, `test_set_cost`, `test_auc`, `test_f1_optimal`, `test_precision_optimal`, `test_recall_optimal`.
+    * **Artifacts Logged:** The final, trained `scikit-learn` pipeline (including the preprocessor and model) is saved to MLflow.
+
+* **Current Results**
+    * **Average Validation AUC:** 0.4984
+    * **Test AUC:** 0.5098
+    * **Optimal Threshold:** 0.3466
+    * **Test Set Cost:** $102,060
+    * **Test F1-score:** 0.0803
+    * **Test Precision:** 0.0509
+    * **Test Recall:** 0.1896
+
+* **Status:** The batch pipeline (Tasks 1-5) is now fully automated via the `Makefile`. All steps execute end-to-end. The current model's performance (`Test AUC: 0.5098`) does not meet the project's **Model Performance Gate (AUC >= 0.75)**. The next step is to iterate on the preprocessing and modeling logic to improve the AUC.

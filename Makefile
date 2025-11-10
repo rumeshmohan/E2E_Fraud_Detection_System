@@ -13,7 +13,7 @@ else
 endif
 # --- End of Setup ---
 
-.PHONY: all install process-data train mlflow-ui
+.PHONY: all install process-data train mlflow-ui docker-build docker-up docker-down
 
 # Default command
 all: process-data train
@@ -26,8 +26,6 @@ install: $(PYTHON)
 	$(PYTHON) -m pip install -r requirements.txt
 
 # This rule creates the venv if $(PYTHON) doesn't exist
-# If $(PYTHON) (venv\Scripts\python.exe) doesn't exist, Make runs this
-# command to create it. If it *does* exist, this is skipped.
 $(PYTHON):
 	@echo "Creating virtual environment..."
 	python -m venv venv
@@ -45,4 +43,21 @@ train: install
 # Target to launch the MLflow UI
 mlflow-ui: install
 	@echo "Launching MLflow UI... (Access at http://127.0.0.1:5000)"
+	@echo "This command will run in the foreground. Press Ctrl+C to stop."
 	$(PYTHON) -m mlflow ui
+
+# --- Docker Commands (for Airflow & MLflow) ---
+
+docker-build:
+	@echo "Building Docker images..."
+	docker-compose build
+
+docker-up:
+	@echo "Starting Docker services (MLflow & Airflow)..."
+	@echo "Airflow UI: http://localhost:8080 (admin/admin)"
+	@echo "MLflow UI:  http://localhost:5000"
+	docker-compose up -d --build
+
+docker-down:
+	@echo "Stopping Docker services..."
+	docker-compose down

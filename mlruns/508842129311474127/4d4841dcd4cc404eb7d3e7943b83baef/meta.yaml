@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/mlruns/508842129311474127/4d4841dcd4cc404eb7d3e7943b83baef/artifacts
+end_time: 1762777668490
+entry_point_name: ''
+experiment_id: '508842129311474127'
+lifecycle_stage: active
+run_id: 4d4841dcd4cc404eb7d3e7943b83baef
+run_name: Baseline_LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762777652838
+status: 3
+tags: []
+user_id: DineshRaj

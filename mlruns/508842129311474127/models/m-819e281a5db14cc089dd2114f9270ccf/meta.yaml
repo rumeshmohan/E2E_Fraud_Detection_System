@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/mlruns/508842129311474127/models/m-819e281a5db14cc089dd2114f9270ccf/artifacts
+creation_timestamp: 1762777656635
+experiment_id: '508842129311474127'
+last_updated_timestamp: 1762777668469
+model_id: m-819e281a5db14cc089dd2114f9270ccf
+model_type: null
+name: Baseline_LogisticRegression_model
+source_run_id: 4d4841dcd4cc404eb7d3e7943b83baef
+status: 2
+status_message: null

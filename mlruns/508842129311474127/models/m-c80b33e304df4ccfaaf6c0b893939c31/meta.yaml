@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/DineshRaj/OneDrive/Documents/Rumesh/ZuuCrewCourse/FinalProject/mlruns/508842129311474127/models/m-c80b33e304df4ccfaaf6c0b893939c31/artifacts
+creation_timestamp: 1762779745621
+experiment_id: '508842129311474127'
+last_updated_timestamp: 1762779749844
+model_id: m-c80b33e304df4ccfaaf6c0b893939c31
+model_type: null
+name: Advanced_XGBoost_model
+source_run_id: 34ca0b02fa814a2d827135522cd863dc
+status: 2
+status_message: null
